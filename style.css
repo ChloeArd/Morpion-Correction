@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +11,7 @@ html {
 
 body {
     width: 100%;
+    font-family: 'Langar', cursive;
 }
 
 .container {
@@ -26,6 +28,10 @@ body {
 }
 
 .case {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
     width: 33%;
     height: 15rem;
     border: 1px solid black;
