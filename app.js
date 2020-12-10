@@ -32,9 +32,10 @@ for(const square of cases) {
 
 
     });
+
+    // Empêche un élément par défault de se produire, ici on empèche que le menu apparaisse quand on fait un clique droit qu'au niveau du square !!!!
+    square.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+    });
 }
 
-// Empeche un élément par défault de se produire, ici on empèche que le menu apparaisse quand on fait un clique droit
-document.addEventListener("contextmenu", function (event) {
-    event.preventDefault();
-});
