@@ -33,3 +33,8 @@ for(const square of cases) {
 
     });
 }
+
+// Empeche un élément par défault de se produire, ici on empèche que le menu apparaisse quand on fait un clique droit
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+});
