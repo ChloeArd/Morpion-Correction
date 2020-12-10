@@ -76,33 +76,18 @@ function checkVertical(player) {
 }
 
 //Une verification diagonale.
-function checkDiagonal() {
+function checkDiagonal(player) {
     //Et la au 1er passage, j'aurai 0, 4, 8 / au 2è j'aurai 2, 4, 6
-    if (cases[0].innerHTML === "X" && cases[4].innerHTML === "X" && cases[8].innerHTML === "X") {
-        return 'Player 1 won !'
+    if (cases[0].innerHTML === player && cases[4].innerHTML === player && cases[8].innerHTML === player) {
+        return true;
     }
 
-    else if (cases[0].innerHTML === "O" && cases[4].innerHTML === "O" && cases[8].innerHTML === "O") {
-        return 'Player 2 won !'
-    }
-
-    if (cases[2].innerHTML === "X" && cases[4].innerHTML === "X" && cases[6].innerHTML === "X") {
-        return 'Player 1 won !'
-    }
-
-    else if (cases[2].innerHTML === "O" && cases[4].innerHTML === "O" && cases[6].innerHTML === "O") {
-        return 'Player 2 won !'
+    if (cases[2].innerHTML === player && cases[4].innerHTML === player && cases[6].innerHTML === player) {
+        return true;
     }
 
     return false;
 }
-
-
-
-
-
-
-
 
 //Insère une lettre dans le div .case
 function insertPlayerText(element, playerChar) {
