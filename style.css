@@ -40,11 +40,13 @@ body {
 
 #won {
     border: 1px dotted mediumseagreen;
-    width: 50%;
+    width: 20%;
     margin: 20px auto;
     height: 50px;
-    text-align: center;
-    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
     vertical-align: middle;
 }
 
