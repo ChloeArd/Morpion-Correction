@@ -42,6 +42,13 @@ function checkCases() {
             playerO = checkDiagonal("O");
         }
     }
+
+    if (playerX) {
+        console.log("Le joueur 1 à gagné ! (X)")
+    }
+    else if (playerO) {
+        console.log("Le joueur 2 à gagné ! (O)")
+    }
 }
 
 //Un vérification horizontale.
