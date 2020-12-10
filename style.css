@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+}
+
+.container {
+    width: 40%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+#game-area {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.case {
+    width: 33%;
+    height: 15rem;
+    border: 1px solid black;
+}
