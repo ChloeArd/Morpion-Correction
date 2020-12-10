@@ -40,7 +40,19 @@ body {
 
 #won {
     border: 1px dotted mediumseagreen;
-    width: 80%;
+    width: 50%;
     margin: 20px auto;
     height: 50px;
+    text-align: center;
+    font-size: 1.6rem;
+    vertical-align: middle;
+}
+
+button {
+    padding: 20px;
+    margin: auto;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
 }

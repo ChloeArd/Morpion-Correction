@@ -1,8 +1,6 @@
-const CLICK_LEFT = 0;
-const CLICK_RIGHT = 2;
-
+const CLICK_LEFT = 0, CLICK_RIGHT = 2;
+let playerX = false, playerO = false;
 let cases = document.getElementsByClassName("case");
-
 
 //Ici square contient un nouvel élément .case de la liste d'éléments a chaque passage de la boucle !
 //Maintenant que j'ai tous mes éléments, je dois trouver une solution pour savoir QUI et SI on a cliqué.
@@ -23,14 +21,13 @@ for(const square of cases) {
 
         //toujours après avoir effectué un clic, vérifier si qlqn a gagné, function???
         checkCases();
-
     });
 }
 
 // Vérifier quelque chose.
 function checkCases() {
-    let playerX = checkHorizontal("X");
-    let playerO = checkHorizontal("O");
+    playerX = checkHorizontal("X");
+    playerO = checkHorizontal("O");
 
     //Si le résultat est autre chose qu'une chaine (donc false) alors on passe au test suivant !
     if(!playerX && !playerO) { // revient à ==> playerX === false && playerO === flase
@@ -42,12 +39,11 @@ function checkCases() {
             playerO = checkDiagonal("O");
         }
     }
-
     if (playerX) {
-        console.log("Le joueur 1 à gagné ! (X)")
+        document.getElementById("won").innerHTML = "Le joueur 1 à gagné (X)!";
     }
     else if (playerO) {
-        console.log("Le joueur 2 à gagné ! (O)")
+        document.getElementById("won").innerHTML = "Le joueur 2 à gagné (O)!";
     }
 }
 
@@ -72,7 +68,6 @@ function checkVertical(player) {
         }
     }
     return false;
-
 }
 
 //Une verification diagonale.
@@ -81,20 +76,20 @@ function checkDiagonal(player) {
     if (cases[0].innerHTML === player && cases[4].innerHTML === player && cases[8].innerHTML === player) {
         return true;
     }
-
     if (cases[2].innerHTML === player && cases[4].innerHTML === player && cases[6].innerHTML === player) {
         return true;
     }
-
     return false;
 }
 
 //Insère une lettre dans le div .case
 function insertPlayerText(element, playerChar) {
     //Element contient l'élément a qui on va donner la lettre contenue dans playerChar.
-    if(element.innerHTML.length === 0) {
-        //PlayerChar contient la lettre à insérer, X ou O
-        element.innerHTML = playerChar; //Contient l'objet qui a généré l'évènement (l'objet sur lequel on a clic)
+    if (!playerX && !playerO) {
+        if (element.innerHTML.length === 0) {
+            //PlayerChar contient la lettre à insérer, X ou O
+            element.innerHTML = playerChar; //Contient l'objet qui a généré l'évènement (l'objet sur lequel on a clic)
+        }
     }
 }
 
@@ -103,3 +98,12 @@ document.addEventListener("contextmenu", function (event) {
     event.preventDefault();
 });
 
+//Reset de la zone de jeu.
+document.getElementById("reset").addEventListener("click", function () {
+    for (let square of cases) {
+        square.innerHTML = "";
+    }
+    playerO = false;
+    playerX = false;
+    document.getElementById("won").innerHTML = "";
+})
