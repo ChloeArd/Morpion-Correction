@@ -103,7 +103,6 @@ document.getElementById("reset").addEventListener("click", function () {
     for (let square of cases) {
         square.innerHTML = "";
     }
-    playerO = false;
-    playerX = false;
+    playerO = playerX = false; //playerO et playerX sont faux !
     document.getElementById("won").innerHTML = "";
 })
